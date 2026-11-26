@@ -1,0 +1,426 @@
+/* Remike Analytics — playful neo-brutalism, same house style as the Rush
+   series: cream paper, ink borders, hard offset shadows, flat candy accents. */
+
+:root {
+  --paper: #fff8ec;
+  --ink: #1c1c1c;
+  --yellow: #ffd23f;
+  --pink: #ff90e8;
+  --blue: #7ab8ff;
+  --green: #4ade80;
+  --white: #ffffff;
+  --shadow: 7px 7px 0 var(--ink);
+  --shadow-sm: 4px 4px 0 var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  padding: 28px 16px 40px;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: "Space Mono", ui-monospace, monospace;
+}
+
+/* ---------- header ---------- */
+
+.site-head {
+  max-width: 1180px;
+  margin: 0 auto 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title-card {
+  display: inline-block;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 18px 26px 16px;
+  transform: rotate(-1.2deg);
+}
+
+.kicker {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 4px;
+}
+
+.title-card h1 {
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 0.95;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.title-card h1 .hl {
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 0 10px;
+  display: inline-block;
+  transform: rotate(1.5deg);
+}
+
+.tagline {
+  font-family: "Caveat", "Segoe Print", cursive;
+  font-size: 21px;
+  margin: 8px 0 0;
+}
+
+.sample-badge {
+  background: var(--pink);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  transform: rotate(1.5deg);
+}
+
+/* ---------- layout ---------- */
+
+.layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.card {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 20px 22px;
+}
+
+.card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.card-head h2 {
+  font-size: 22px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.card-sub {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 12px;
+  margin: 2px 0 0;
+  opacity: 0.75;
+}
+
+/* ---------- stat cards ---------- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.stat-card {
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  padding: 16px 18px 14px;
+  background: var(--white);
+}
+
+.stat-card:nth-child(1) { background: var(--yellow); }
+.stat-card:nth-child(2) { background: var(--blue); }
+.stat-card:nth-child(3) { background: var(--green); }
+.stat-card:nth-child(4) { background: var(--pink); }
+
+.stat-label {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0 0 6px;
+}
+
+.stat-value {
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+.stat-sub {
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+
+.delta {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--white);
+  border-radius: 999px;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ---------- toggles ---------- */
+
+.toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.toggle-btn {
+  appearance: none;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 16px;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.08s ease;
+}
+
+.toggle-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.toggle-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.toggle-btn.active {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.toggle-btn .dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  margin-right: 7px;
+  vertical-align: baseline;
+}
+
+.toggle-btn.active .dot {
+  border-color: var(--white);
+}
+
+/* ---------- chart ---------- */
+
+.chart-wrap {
+  width: 100%;
+}
+
+.chart-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart-axis {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 11px;
+  fill: var(--ink);
+  opacity: 0.7;
+}
+
+.chart-tip-box {
+  fill: var(--ink);
+}
+
+.chart-tip-text {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--white);
+}
+
+.chart-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.chart-legend .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  margin-right: 6px;
+}
+
+/* ---------- table ---------- */
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table.games {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+table.games th,
+table.games td {
+  border-bottom: 2px solid var(--ink);
+  padding: 12px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+table.games th {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+table.games tbody tr {
+  cursor: pointer;
+}
+
+table.games tbody tr:hover {
+  background: #fff3d6;
+}
+
+table.games tbody tr.selected {
+  background: var(--yellow);
+}
+
+table.games td.num,
+table.games th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.game-name {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.game-chip {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: baseline;
+}
+
+.real-tag {
+  font-family: "Space Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--ink);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 1px 7px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.sample-tag {
+  background: var(--white);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+/* ---------- footer ---------- */
+
+.site-foot {
+  max-width: 1180px;
+  margin: 26px auto 0;
+  font-size: 14px;
+}
+
+.site-foot .card {
+  box-shadow: var(--shadow-sm);
+}
+
+.site-foot p {
+  margin: 0 0 6px;
+}
+
+.site-foot p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 18px 10px 30px;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px 14px;
+  }
+
+  .sample-badge {
+    transform: none;
+  }
+}
